@@ -1,1 +1,0 @@
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed=70 AudioID="1389847916" AnimationId="129342287" local _=Instance.new("Animation") _.AnimationId="rbxassetid://"..AnimationId local _=game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(_) _:Play() _:AdjustSpeed(1) setclipboard(AudioID)
