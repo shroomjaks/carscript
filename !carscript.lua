@@ -21,3 +21,5 @@ end)
 local Slider = Category:AddSlider("Walkspeed", 1, 500, 16, function(val)
 	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = val
 end)
+
+local Label = Category:AddLabel("Credits to RegularVynixu for making the UI lib.")
