@@ -23,3 +23,22 @@ local Slider = Category:AddSlider("Walkspeed", 1, 500, 16, function(val)
 end)
 
 local Label = Category:AddLabel("Credits to RegularVynixu for making the UI lib.")
+
+local Tab = Gui:AddTab("Ragdoll Engine")
+
+local Category = Tab:AddCategory("Ragdoll Engine Features")
+
+local Button = Category:AddButton("Push Aura", function()
+    while true do
+	game.Players.LocalPlayer.Character.Push.PushEvent:FireServer()
+	wait(0.01)
+	end
+end)
+
+local Label = Category:AddLabel("Useful for flinging people when you hit them with your car")
+local Label = Category:AddLabel("Or just flinging people who come close.")
+local Label = Category:AddLabel("Equip Push tool before clicking to work.")
+
+local Button = Category:AddButton("Anti-Ragdoll", function()
+    game.Players.LocalPlayer.Character:FindFirstChild("Local Ragdoll"):Destroy()
+end)
