@@ -11,11 +11,17 @@ local Tab = Gui:AddTab("Main")
 local Category = Tab:AddCategory("Main")
 
 local Button = Category:AddButton("Enable FE Car", function()
-	game.Players.LocalPlayer.Character.Humanoid.JumpPower=0.0001 Float_Height="-1.03" AnimationId="129342287" local a=Instance.new("Animation") a.AnimationId="rbxassetid://"..AnimationId local a=game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(a) a:Play() a:AdjustSpeed(1) local a=1 G=game _=wait p=G:GetService("Players").LocalPlayer.Character p:FindFirstChild("Humanoid").HipHeight=Float_Height _(1.5) t=.4 for a=1,a do repeat p:FindFirstChild("Humanoid").HipHeight=Float_Height-n _(t) p:FindFirstChild("Humanoid").HipHeight=Float_Height+n _(t)until p:FindFirstChild("Humanoid").Health==0 end
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed=70 game.Players.LocalPlayer.Character.Humanoid.JumpPower=0.0001 Float_Height="-1.03" AnimationId="129342287" local a=Instance.new("Animation") a.AnimationId="rbxassetid://"..AnimationId local a=game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(a) a:Play() a:AdjustSpeed(1) for a,a in pairs(game.Players.LocalPlayer.Character:GetDescendants())do if a.ClassName=="Part"then a.CustomPhysicalProperties=PhysicalProperties.new(0,0,0)end end local a=1 G=game _=wait p=G:GetService("Players").LocalPlayer.Character p:FindFirstChild("Humanoid").HipHeight=Float_Height _(1.5) t=.4 for a=1,a do repeat p:FindFirstChild("Humanoid").HipHeight=Float_Height-n _(t) p:FindFirstChild("Humanoid").HipHeight=Float_Height+n _(t)until p:FindFirstChild("Humanoid").Health==0 end
 end)
 
-local Box = Category:AddBox("Slide (0 by default)", function(str)
+local Category = Tab:AddCategory("Settings")
+
+local Box = Category:AddBox("Slide", function(str)
 	for a,a in pairs(game.Players.LocalPlayer.Character:GetDescendants())do if a.ClassName=="Part"then a.CustomPhysicalProperties=PhysicalProperties.new(str,0,0)end end 
+end)
+
+local Box = Category:AddBox("Hipheight", function(str)
+	Float_Height=str local a=1 G=game _=wait p=G:GetService("Players").LocalPlayer.Character p:FindFirstChild("Humanoid").HipHeight=Float_Height _(1.5) t=.4 for a=1,a do repeat p:FindFirstChild("Humanoid").HipHeight=Float_Height-n _(t) p:FindFirstChild("Humanoid").HipHeight=Float_Height+n _(t)until p:FindFirstChild("Humanoid").Health==0 end
 end)
 
 local Slider = Category:AddSlider("Walkspeed", 1, 500, 16, function(val)
@@ -23,6 +29,20 @@ local Slider = Category:AddSlider("Walkspeed", 1, 500, 16, function(val)
 end)
 
 local Label = Category:AddLabel("Credits to RegularVynixu for making the UI lib.")
+
+local Category = Tab:AddCategory("Settings Presets")
+
+local Button = Category:AddButton("Default Car Settings Preset", function()
+	for a,a in pairs(game.Players.LocalPlayer.Character:GetDescendants())do if a.ClassName=="Part"then a.CustomPhysicalProperties=PhysicalProperties.new(0,0,0)end end
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 70
+	Float_Height="-1.03" local a=1 G=game _=wait p=G:GetService("Players").LocalPlayer.Character p:FindFirstChild("Humanoid").HipHeight=Float_Height _(1.5) t=.4 for a=1,a do repeat p:FindFirstChild("Humanoid").HipHeight=Float_Height-n _(t) p:FindFirstChild("Humanoid").HipHeight=Float_Height+n _(t)until p:FindFirstChild("Humanoid").Health==0 end
+end)
+
+local Button = Category:AddButton("Extreme Car Settings Preset", function()
+	for a,a in pairs(game.Players.LocalPlayer.Character:GetDescendants())do if a.ClassName=="Part"then a.CustomPhysicalProperties=PhysicalProperties.new(0.5,0,0)end end
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 500
+	Float_Height="-1.03" local a=1 G=game _=wait p=G:GetService("Players").LocalPlayer.Character p:FindFirstChild("Humanoid").HipHeight=Float_Height _(1.5) t=.4 for a=1,a do repeat p:FindFirstChild("Humanoid").HipHeight=Float_Height-n _(t) p:FindFirstChild("Humanoid").HipHeight=Float_Height+n _(t)until p:FindFirstChild("Humanoid").Health==0 end
+end)
 
 local Tab = Gui:AddTab("Ragdoll Engine")
 
