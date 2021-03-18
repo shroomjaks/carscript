@@ -69,4 +69,6 @@ local Button = Category:AddButton("Copy Discord Invite", function()
     setclipboard("https://discord.gg/hsdcAFZY9E")
 end)
 
+local Category = Tab:AddCategory("Credits")
+
 local Label = Category:AddLabel("Credits to RegularVynixu for making the UI lib.")
