@@ -28,8 +28,6 @@ local Slider = Category:AddSlider("Walkspeed", 1, 500, 16, function(val)
 	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = val
 end)
 
-local Label = Category:AddLabel("Credits to RegularVynixu for making the UI lib.")
-
 local Category = Tab:AddCategory("Settings Presets")
 
 local Button = Category:AddButton("Default Car Settings Preset", function()
@@ -43,6 +41,8 @@ local Button = Category:AddButton("Extreme Car Settings Preset", function()
 	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 500
 	Float_Height="-1.03" local a=1 G=game _=wait p=G:GetService("Players").LocalPlayer.Character p:FindFirstChild("Humanoid").HipHeight=Float_Height _(1.5) t=.4 for a=1,a do repeat p:FindFirstChild("Humanoid").HipHeight=Float_Height-n _(t) p:FindFirstChild("Humanoid").HipHeight=Float_Height+n _(t)until p:FindFirstChild("Humanoid").Health==0 end
 end)
+
+local Label = Category:AddLabel("Credits to RegularVynixu for making the UI lib.")
 
 local Tab = Gui:AddTab("Ragdoll Engine")
 
