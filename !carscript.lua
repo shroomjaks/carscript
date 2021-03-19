@@ -61,7 +61,7 @@ local Button = Category:AddButton("Anti-Ragdoll", function()
     game.Players.LocalPlayer.Character:FindFirstChild("Local Ragdoll"):Destroy()
 end)
 
-local Tab = Gui:AddTab("Info")
+local Tab = Gui:AddTab("Misc")
 
 local Category = Tab:AddCategory("Discord")
 
