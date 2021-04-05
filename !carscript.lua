@@ -45,12 +45,10 @@ end)
 local Tab = Gui:AddTab("Ragdoll Engine")
 
 local Category = Tab:AddCategory("Ragdoll Engine Features")
-
 local Button = Category:AddButton("Push Aura", function()
-    while true do
+RunService.RenderStepped:Connect(function()
 	game.Players.LocalPlayer.Character.Push.PushEvent:FireServer()
-	wait(0.01)
-	end
+end)
 end)
 
 local Label = Category:AddLabel("Useful for flinging people when you hit them with your car")
