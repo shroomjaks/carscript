@@ -46,7 +46,7 @@ local Tab = Gui:AddTab("Ragdoll Engine")
 
 local Category = Tab:AddCategory("Ragdoll Engine Features")
 local Button = Category:AddButton("Push Aura", function()
-RunService.RenderStepped:Connect(function()
+game.RunService.RenderStepped:Connect(function()
 	game.Players.LocalPlayer.Character.Push.PushEvent:FireServer()
 end)
 end)
