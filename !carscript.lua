@@ -72,3 +72,11 @@ end)
 local Category = Tab:AddCategory("Credits")
 
 local Label = Category:AddLabel("Credits to RegularVynixu for making the UI lib.")
+
+local Tab = Gui:AddTab("Close")
+
+local Category = Tab:AddCategory("Close")
+
+local Button = Category:AddButton("Close GUI", function()
+	game.CoreGui.IreXionUILib:Destroy()
+end)
