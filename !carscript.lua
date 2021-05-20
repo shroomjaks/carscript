@@ -61,22 +61,27 @@ local Button = Category:AddButton("Anti-Ragdoll", function()
     game.Players.LocalPlayer.Character:FindFirstChild("Local Ragdoll"):Destroy()
 end)
 
-local Tab = Gui:AddTab("Misc")
-
-local Category = Tab:AddCategory("Discord")
-
-local Button = Category:AddButton("Copy Discord Invite", function()
-    setclipboard("https://discord.gg/hsdcAFZY9E")
-end)
-
-local Category = Tab:AddCategory("Credits")
-
-local Label = Category:AddLabel("Credits to RegularVynixu for making the UI lib.")
-
 local Tab = Gui:AddTab("Close")
 
 local Category = Tab:AddCategory("Close")
 
 local Button = Category:AddButton("Close GUI", function()
 	game.CoreGui.IreXionUILib:Destroy()
+end)
+
+function toClipboard(String)
+	local clipBoard = setclipboard or toclipboard or set_clipboard or (Clipboard and Clipboard.set)
+	if clipBoard then
+		clipBoard(String)
+		Library:Notify("Invite copied to clipboard.")
+	else
+		print("https://discord.gg/hsdcAFZY9E")
+		Library:Notify("Your exploit does not support clipboard. Press F9 to see the invite.")
+	end
+end
+
+Library:Notify("Copy Discord server invite to clipboard?", function(bool)
+	if bool == true then
+		toClipboard("https://discord.gg/hsdcAFZY9E")
+	end
 end)
