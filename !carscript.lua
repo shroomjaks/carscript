@@ -78,15 +78,12 @@ local Button = Category:AddButton("Close GUI", function()
 	Core.IreXionUILib:Destroy()
 end)
 
-Library:Notify("Copy Discord server invite to clipboard?", function(bool)
+Library:Notify("Join Discord server?", function(bool)
 	if bool == true then
-		local clipBoard = setclipboard or toclipboard or set_clipboard or (Clipboard and Clipboard.set)
-		if clipBoard then
-			clipBoard("https://discord.gg/hsdcAFZY9E")
-			Library:Notify("Invite copied to clipboard.")
-		else
-			print("https://discord.gg/hsdcAFZY9E")
-			Library:Notify("Your exploit does not support clipboard. Press F9 to see the invite.")
-		end
+		print("https://discord.gg/hsdcAFZY9E")
+		getgenv().discord_invite = "hsdcAFZY9E"
+
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/tealingg/scripts/master/discord_invite.lua"))()
+		Library:Notify("Invite prompted! If it did not work open Discord or check devconsole for the invite.")
 	end
 end)
