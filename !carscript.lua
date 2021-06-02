@@ -70,6 +70,33 @@ local Button = Category:AddButton("Anti-Ragdoll", function()
 end)
 end
 
+local Tab = Gui:AddTab("Discord")
+
+local Category = Tab:AddCategory("Discord")
+
+local Button = Category:AddButton("Join Discord", function()
+    print("https://discord.gg/hsdcAFZY9E")
+    Library:Notify("Invite prompted! If it did not work open Discord or check devconsole for the invite.")
+    local json = {
+   ["cmd"] = "INVITE_BROWSER",
+   ["args"] = {
+       ["code"] = "hsdcAFZY9E"
+   },
+   ["nonce"] = 'a'
+}
+spawn(function()
+   print(syn.request({
+       Url = 'http://127.0.0.1:6463/rpc?v=1',
+       Method = 'POST',
+       Headers = {
+           ['Content-Type'] = 'application/json',
+           ['Origin'] = 'https://discord.com'
+       },
+       Body = game:GetService('HttpService'):JSONEncode(json),
+   }).Body)
+end)
+end)
+
 local Tab = Gui:AddTab("Close")
 
 local Category = Tab:AddCategory("Close")
@@ -81,9 +108,24 @@ end)
 Library:Notify("Join Discord server?", function(bool)
 	if bool == true then
 		print("https://discord.gg/hsdcAFZY9E")
-		getgenv().discord_invite = "hsdcAFZY9E"
-
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/tealingg/scripts/master/discord_invite.lua"))()
 		Library:Notify("Invite prompted! If it did not work open Discord or check devconsole for the invite.")
+		local json = {
+   ["cmd"] = "INVITE_BROWSER",
+   ["args"] = {
+       ["code"] = "hsdcAFZY9E"
+   },
+   ["nonce"] = 'a'
+}
+spawn(function()
+   print(syn.request({
+       Url = 'http://127.0.0.1:6463/rpc?v=1',
+       Method = 'POST',
+       Headers = {
+           ['Content-Type'] = 'application/json',
+           ['Origin'] = 'https://discord.com'
+       },
+       Body = game:GetService('HttpService'):JSONEncode(json),
+   }).Body)
+end)
 	end
 end)
