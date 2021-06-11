@@ -75,8 +75,8 @@ local Tab = Gui:AddTab("Discord")
 local Category = Tab:AddCategory("Discord")
 
 local Button = Category:AddButton("Join Discord", function()
-    print("https://discord.gg/hsdcAFZY9E")
-    Library:Notify("Invite prompted! If it did not work open Discord or check devconsole for the invite.")
+    setclipboard("https://discord.gg/hsdcAFZY9E")
+    Library:Notify("Invite prompted! If it did not work the invite was copied to your clipboard.")
     local json = {
    ["cmd"] = "INVITE_BROWSER",
    ["args"] = {
@@ -107,9 +107,9 @@ end)
 
 Library:Notify("Join Discord server?", function(bool)
 	if bool == true then
-		print("https://discord.gg/hsdcAFZY9E")
-		Library:Notify("Invite prompted! If it did not work open Discord or check devconsole for the invite.")
-		local json = {
+		setclipboard("https://discord.gg/hsdcAFZY9E")
+    Library:Notify("Invite prompted! If it did not work the invite was copied to your clipboard.")
+    local json = {
    ["cmd"] = "INVITE_BROWSER",
    ["args"] = {
        ["code"] = "hsdcAFZY9E"
@@ -127,5 +127,5 @@ spawn(function()
        Body = game:GetService('HttpService'):JSONEncode(json),
    }).Body)
 end)
-	end
+end
 end)
