@@ -102,7 +102,7 @@ local Tab = Gui:AddTab("Close")
 local Category = Tab:AddCategory("Close")
 
 local Button = Category:AddButton("Close GUI", function()
-	Core.IreXionUILib:Destroy()
+	Core["FE Car Made by Lozarth"]:Destroy()
 end)
 
 Library:Notify("Join Discord server?", function(bool)
