@@ -4,7 +4,7 @@ local Run = game:GetService("RunService")
 local Core = game:GetService("CoreGui")
 local LocalPlayer = Playr.LocalPlayer
 
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/IreXion-UI-Library/main/IreXion%20UI%20Library"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Lozarth/IreXion-UI-Library/main/IreXion.lua"))()
 
 local Gui = Library:AddGui({
 	Title = {"FE Car", "Made by Lozarth"},
